@@ -1,0 +1,283 @@
+/* Reset și Setări Fonturi */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Book Antiqua", Palatino, "Palatino Linotype", serif;
+    background-color: #2e3d44; /* Gri petrol fundal general */
+    color: #333;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Bookman Old Style", Georgia, serif;
+}
+
+/* Antet și Navigație */
+header {
+    background-color: #7b1fa2; /* Violet */
+    color: white;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+}
+
+header h1 span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-top: 0.2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav a:hover, nav a.active {
+    text-decoration: underline;
+}
+
+/* Structură Main cu margini Gri Petrol (Echivalent 5cm pe desktop) */
+main {
+    background-color: #2e3d44; /* Gri petrol lateral */
+    padding: 2rem 5vw; /* Margini adaptabile */
+}
+
+@media (min-width: 1200px) {
+    main {
+        padding: 3rem 12.5rem; /* ~5 cm pe ecrane mari */
+    }
+}
+
+/* Secțiunea 1: Text Explicativ (Vernil foarte deschis) */
+.sectiune-explicativa {
+    background-color: #f0fff4; /* Vernil foarte deschis */
+    padding: 1.5rem;
+    min-height: 5rem; /* ~2 cm înălțime */
+    margin-bottom: 2rem;
+    border-radius: 4px;
+}
+
+.sectiune-explicativa p {
+    text-align: justify;
+}
+
+@media (min-width: 768px) {
+    .sectiune-explicativa p {
+        text-indent: 6rem; /* Adaptare mobil pentru cei 150mm ceruți pe desktop */
+    }
+}
+
+/* Secțiunea 2: Conținut (Bej-crem textură) */
+.sectiune-continut {
+    background-color: #fffdf5; /* Bej-crem deschis */
+    /* Textură simulată de hârtie creponată prin CSS gradient */
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.01) 1px, transparent 1px),
+                      linear-gradient(rgba(0,0,0,0.01) 1px, transparent 1px);
+    background-size: 4px 4px;
+    padding: 2rem;
+    min-height: auto;
+    border-radius: 4px;
+}
+
+.spatiu-1cm {
+    margin-top: 2.5rem; /* Spațiu ~1cm */
+}
+
+/* Zona Imagini Reviste (Index) */
+.grid-reviste {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.revista-item {
+    text-align: center;
+    max-width: 100%;
+}
+
+.revista-item img {
+    /* Dimensiuni proporționale bazate pe 297x210mm (A4) */
+    width: 100%;
+    max-width: 315px; 
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.revista-item img:hover {
+    transform: scale(1.02);
+}
+
+.revista-item p {
+    margin-top: 0.8rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Structură 3 Coloane (Despre / About) */
+.trei-coloane {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .trei-coloane {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.coloana h3 {
+    color: #0056b3; /* Albastru */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.coloana p {
+    text-align: justify;
+    color: #000;
+}
+
+/* Formular Contact */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-header-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 380px; /* ~10 cm lățime pe desktop, adaptabil pe mobil */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    color: #0056b3; /* Albastru */
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+    font-family: "Bookman Old Style", Georgia, serif;
+}
+
+.form-group span.hint {
+    font-size: 0.9rem;
+    color: #000;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: "Book Antiqua", serif;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.file-label-custom {
+    color: #d32f2f !important; /* Roșu */
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.error-message {
+    color: #d32f2f;
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: center;
+    display: none; /* Se activează prin JS la nevoie */
+}
+
+.btn-submit {
+    background-color: #7b1fa2;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: #6a1b9a;
+}
+
+/* Subsol (Footer) */
+footer {
+    background-color: #ffccbc; /* Culoarea piersicii */
+    color: #000;
+    padding: 1.5rem 5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    footer {
+        grid-template-columns: 1fr 1fr 1fr;
+        text-align: left;
+    }
+    footer .centru { text-align: center; }
+    footer .dreapta { text-align: right; }
+}
+
+footer .stanga a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 0.8rem;
+}
+
+footer .stanga a:hover {
+    text-decoration: underline;
+}
+
+footer .centru {
+    font-style: italic;
+}
+
+footer .dreapta {
+    font-weight: normal;
+}

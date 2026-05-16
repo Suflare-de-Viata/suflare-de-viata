@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revistă - About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Revistă <span>About</span></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Numere</a></li>
+                <li><a href="despre.html">Despre</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sectiune-explicativa">
+            <p>This section provides details regarding the editorial structure of the magazine, our history, and the drafting standards required for submitting scientific materials.</p>
+        </section>
+
+        <section class="sectiune-continut">
+            <div class="trei-coloane">
+                <div class="coloana">
+                    <h3>Editorial board</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, ante id efficitur convallis, turpis est imperdiet metus, ac varius ex sem sit amet lacus. Cras euismod nisl id nisl.</p>
+                </div>
+                <div class="coloana">
+                    <h3>Revista</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, ante id efficitur convallis, turpis est imperdiet metus, ac varius ex sem sit amet lacus. Cras euismod nisl id nisl.</p>
+                </div>
+                <div class="coloana">
+                    <h3>Cerinţe pentru autori</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus, ante id efficitur convallis, turpis est imperdiet metus, ac varius ex sem sit amet lacus. Cras euismod nisl id nisl.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="stanga">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Wix</a>
+            <a href="#" target="_blank">Webnode</a>
+            <a href="#" target="_blank">GitHub</a>
+        </div>
+        <div class="centru">
+            &copy; Şerban George Paul Drugaş
+        </div>
+        <div class="dreapta">
+            Romania: <span id="ceas-romania">--:--:--</span>
+        </div>
+    </footer>
+
+    <script>
+        function actualizeazaCeas() {
+            const opțiuni = { timeZone: 'Europe/Bucharest', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+            document.getElementById('ceas-romania').textContent = new Date().toLocaleString('ro-RO', opțiuni);
+        }
+        setInterval(actualizeazaCeas, 1000); actualizeazaCeas();
+    </script>
+</body>
+</html>

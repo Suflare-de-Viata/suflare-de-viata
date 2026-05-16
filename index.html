@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revistă - Numere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Revistă</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Numere</a></li>
+                <li><a href="despre.html">Despre</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Secțiunea 1 -->
+        <section class="sectiune-explicativa">
+            <p>Bun venit pe platforma oficială a publicației noastre. Aici puteți consulta arhiva completă și cele mai recente numere apărute, în format digital de înaltă rezoluție.</p>
+        </section>
+
+        <!-- Secțiunea 2 -->
+        <section class="sectiune-continut">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            
+            <div class="spatiu-1cm"></div>
+
+            <!-- Zonă imagini cu link extern către Drive -->
+            <div class="grid-reviste">
+                <div class="revista-item">
+                    <!-- Înlocuiți # cu link-ul real de Google Drive către PDF -->
+                    <a href="#" target="_blank" title="Deschide PDF în Drive">
+                        <img src="Rev0001.jpg" alt="Coperta Nr. 1 / 2026">
+                    </a>
+                    <p>Nr. 1 / 2026</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="stanga">
+            <!-- Înlocuiți # cu link-urile dumneavoastră -->
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Wix</a>
+            <a href="#" target="_blank">Webnode</a>
+            <a href="#" target="_blank">GitHub</a>
+        </div>
+        <div class="centru">
+            &copy; Şerban George Paul Drugaş
+        </div>
+        <div class="dreapta">
+            Romania: <span id="ceas-romania">--:--:--</span>
+        </div>
+    </footer>
+
+    <script>
+        // Ceas în timp real pentru fusul orar al României
+        function actualizeazaCeas() {
+            const opțiuni = {
+                timeZone: 'Europe/Bucharest',
+                year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', second: '2-digit',
+                hour12: false
+            };
+            const acum = new Date().toLocaleString('ro-RO', opțiuni);
+            document.getElementById('ceas-romania').textContent = acum;
+        }
+        setInterval(actualizeazaCeas, 1000);
+        actualizeazaCeas();
+    </script>
+</body>
+</html>
