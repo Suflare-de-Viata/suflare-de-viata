@@ -56,15 +56,15 @@ nav a:hover, nav a.active {
     text-decoration: underline;
 }
 
-/* Structură Main cu margini Gri Petrol (Echivalent 5cm pe desktop) */
+/* Structură Main cu margini Gri Petrol (Echivalent 1cm pe desktop) */
 main {
     background-color: #2e3d44; /* Gri petrol lateral */
-    padding: 2rem 5vw; /* Margini adaptabile */
+    padding: 1rem 1vw; /* Margini adaptabile */
 }
 
 @media (min-width: 1200px) {
     main {
-        padding: 3rem 12.5rem; /* ~5 cm pe ecrane mari */
+        padding: 1rem 2.5rem; /* ~1 cm pe ecrane mari, vechi 12.5rem */
     }
 }
 
@@ -83,7 +83,7 @@ main {
 
 @media (min-width: 768px) {
     .sectiune-explicativa p {
-        text-indent: 6rem; /* Adaptare mobil pentru cei 150mm ceruți pe desktop */
+        text-indent: 3rem; /* Adaptare mobil pentru cei 75mm pe desktop */
     }
 }
 
