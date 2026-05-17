@@ -83,7 +83,7 @@ main {
 
 @media (min-width: 768px) {
     .sectiune-explicativa p {
-        text-indent: 3rem; /* Adaptare mobil pentru cei 75mm pe desktop */
+        text-indent: 1.5rem; /* Adaptare mobil pe desktop */
     }
 }
 
