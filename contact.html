@@ -25,43 +25,39 @@
             <p>Utilizați formularul de mai jos pentru a ne trimite sugestii, întrebări sau articole propuse spre publicare. Echipa noastră vă va răspunde în cel mai scurt timp.</p>
         </section>
 
-        <section class="sectiune-continut">
-            <div class="contact-container">
-                
+        <!-- Secțiunea 2 structurată adaptabil (Formular stânga 2/3, Donații/ONG dreapta 1/3) -->
+        <section class="sectiune-continut layout-contact">
+            
+            <!-- Zona Formular Contact (2/3) -->
+            <div class="zona-formular">
                 <div class="contact-header-text">
                     <p style="font-weight: bold; text-align: center;">Trimite mesaj şi / sau articol pentru publicare</p>
                     <p style="font-style: italic; text-align: center; margin-top: 0.3rem;">Send me a message and / or an article to be published</p>
                 </div>
 
-                <!-- Înlocuiți 'ID_FORMSPREE' cu codul primit gratuit de la formspree.io dacă doriți funcționalitate directă -->
-                <form action="https://formspree.io" method="POST" enctype="multipart/form-data" class="contact-form" id="revistaForm">
+                <form action="https://formsubmit.co" method="POST" enctype="multipart/form-data" class="contact-form" id="revistaForm" novalidate>
                     
-                    <!-- Caseta 1: Nume -->
                     <div class="form-group">
                         <label>Numele / Name</label>
                         <input type="text" name="nume" required>
                     </div>
 
-                    <!-- Caseta 2: Phone -->
                     <div class="form-group">
                         <label>Phone</label>
                         <input type="tel" name="telefon" required>
                     </div>
 
-                    <!-- Caseta 3: Email -->
                     <div class="form-group">
                         <label>Email</label>
                         <input type="email" name="email" required>
                     </div>
 
-                    <!-- Caseta 4: Message -->
                     <div class="form-group">
                         <label>Message (optional)</label>
                         <span class="hint">Max. 2500 chars.</span>
                         <textarea name="mesaj" maxlength="2500"></textarea>
                     </div>
 
-                    <!-- Încărcare Fișier (Articol) -->
                     <div class="form-group">
                         <label class="file-label-custom">Attache ARTICLE here! (optional)</label>
                         <input type="file" name="articol">
@@ -69,20 +65,58 @@
 
                     <button type="submit" class="btn-submit">Trimite / Send</button>
                     
-                    <!-- Mesajul de eroare cerut -->
                     <div class="error-message" id="errorMsg">Complete non optional fields!</div>
                 </form>
-
             </div>
+
+            <!-- Zona Aside actualizată: IBAN la vedere, Stripe și Link ONG (1/3) -->
+            <aside class="zona-donatii">
+                <h3 class="titru-donatii">Susțineți Revista</h3>
+                
+                <!-- (1) Zona IBAN Mobile Banking & Card prin Stripe -->
+                <div class="caseta-donatie">
+                    <h4>Donație Directă</h4>
+                    
+                    <!-- IBAN lăsat text la vedere pentru Mobile Banking -->
+                    <p class="text-iban">Sau pe Mobile Banking la acest IBAN:</p>
+                    <div class="cod-iban">RO50BTRL00501201E33685XX</div>
+                    <p class="banca-iban">Banca Transilvania</p>
+                    
+                    <div class="separator-donatie">sau curent cu cardul:</div>
+
+                    <!-- Buton Stripe (Folosește Stripe Checkout / Payment Links) -->
+                    <!-- Înlocuiți '#' cu link-ul dumneavoastră real generat din panoul Stripe -->
+                    <a href="https://buy.stripe.com/4gM9AT1Wh6jkf7Bb3u0sU00" target="_blank" class="btn-stripe">
+                        Plătește în siguranță cu cardul (Stripe)
+                    </a>
+                </div>
+
+                <!-- (2) Zona Link către pagină externă ONG cu avertisment obligatoriu -->
+                <div class="caseta-donatie caseta-ong">
+                    <h4>Donație ONG sprijinit de noi!</h4>
+                    
+                    <!-- Avertisment vizual clar pentru vizitator -->
+                    <div class="avertisment-ong">
+                        <strong>Atenție!</strong> Pentru sprijinirea ONG-ului, plata se va efectua securizat direct pe pagina partenerului nostru către care veți fi redirecționat.
+                    </div>
+
+                    <!-- Link extern către pagina ONG-ului -->
+                    <!-- Înlocuiți '#' cu adresa web exactă a paginii de donații a ONG-ului -->
+                    <a href="#" target="_blank" class="btn-ong">
+                        Mergi la pagina de donații ONG
+                    </a>
+                </div>
+            </aside>
+
         </section>
     </main>
 
     <footer>
         <div class="stanga">
-            <a href="#" target="_blank">Facebook</a>
-            <a href="#" target="_blank">Wix</a>
-            <a href="#" target="_blank">Webnode</a>
-            <a href="#" target="_blank">GitHub</a>
+            <a href="https://www.facebook.com/serban.drugas" target="_blank">Facebook</a>
+            <a href="https://serbangpdrugas.wixsite.com/burebistas" target="_blank">Wix</a>
+            <a href="https://serban-george-paul-drugas.webnode.ro/" target="_blank">Webnode</a>
+            <a href="https://serbandrugas.github.io/serban-george-paul-drugas/ro/" target="_blank">GitHub</a>
         </div>
         <div class="centru">
             &copy; Şerban George Paul Drugaş
@@ -93,7 +127,6 @@
     </footer>
 
     <script>
-        // Ceas în timp real
         function actualizeazaCeas() {
             const opțiuni = { timeZone: 'Europe/Bucharest', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
             document.getElementById('ceas-romania').textContent = new Date().toLocaleString('ro-RO', opțiuni);
@@ -101,13 +134,11 @@
         setInterval(actualizeazaCeas, 1000); 
         actualizeazaCeas();
 
-        // Validare formular nativă cu mesaj personalizat în caz de necompletare
         const form = document.getElementById('revistaForm');
         const errorMsg = document.getElementById('errorMsg');
 
         form.addEventListener('submit', function(event) {
-            // Verifică elementele necesare (Nume, Telefon, Email)
-            const inputs Obligatorii = form.querySelectorAll('[required]');
+            const inputsObligatorii = form.querySelectorAll('[required]');
             let valid = true;
 
             inputsObligatorii.forEach(input => {
@@ -117,8 +148,8 @@
             });
 
             if (!valid) {
-                event.preventDefault(); // Oprește trimiterea formularului
-                errorMsg.style.display = 'block'; // Arată eroarea roșie, înclinată
+                event.preventDefault(); 
+                errorMsg.style.display = 'block'; 
             } else {
                 errorMsg.style.display = 'none';
             }
