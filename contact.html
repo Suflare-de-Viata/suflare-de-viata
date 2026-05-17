@@ -35,45 +35,41 @@
                     <p style="font-style: italic; text-align: center; margin-top: 0.3rem;">Send me a message and / or an article to be published</p>
                 </div>
 
-                <form action="https://formsubmit.co/ajax/serbangpdrugas@gmail.com" method="POST" enctype="multipart/form-data" class="contact-form">
+                <!-- Înlocuiește codul de la action cu link-ul tău unic primit de la Formspree -->
+                <form action="https://formspree.io/f/mpqbyyzj" method="POST" enctype="multipart/form-data" class="contact-form">
+
+                  <div class="form-group">
+                    <label>Numele / Name</label>
+                    <input type="text" name="nume" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="telefon" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Email</label>
+                    <!-- Formspree folosește _replyto sau email pentru a ști de unde vine mesajul -->
+                    <input type="email" name="_replyto" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Message (optional)</label>
+                    <span class="hint">Max. 2500 chars.</span>
+                    <textarea name="mesaj" maxlength="2500"></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="file-label-custom">Attache ARTICLE here! (optional)</label>
+                    <!-- IMPORTANT: Formspree cere ca numele câmpului de fișier să fie upload sau attachment -->
+                    <input type="file" name="upload">
+                  </div>
+
+                  <button type="submit" class="btn-submit">Trimite / Send</button>
     
-                   <!-- Setări pentru a redirecționa utilizatorul înapoi pe site-ul tău după trimitere -->
-                   <!-- Înlocuiește link-ul de mai jos cu URL-ul revistei tale de pe GitHub -->
-                   <input type="hidden" name="_next" value="https://suflare-de-viata.github.io/suflare-de-viata/contact.html">
-    
-                   <!-- Dezactivează pagina de mulțumire a lor pentru a rămâne pe site-ul tău -->
-                   <input type="hidden" name="_captcha" value="false">
-
-                   <div class="form-group">
-                     <label>Numele / Name</label>
-                     <input type="text" name="nume" required>
-                   </div>
-
-                   <div class="form-group">
-                     <label>Phone</label>
-                     <input type="tel" name="telefon" required>
-                   </div>
-
-                   <div class="form-group">
-                     <label>Email</label>
-                     <input type="email" name="email" required>
-                   </div>
-
-                   <div class="form-group">
-                     <label>Message (optional)</label>
-                     <span class="hint">Max. 2500 chars.</span>
-                     <textarea name="mesaj" maxlength="2500"></textarea>
-                   </div>
-
-                   <div class="form-group">
-                     <label class="file-label-custom">Attache ARTICLE here! (optional)</label>
-                     <input type="file" name="articol">
-                   </div>
-
-                   <button type="submit" class="btn-submit">Trimite / Send</button>
-    
-                   <div class="error-message" id="errorMsg">Complete non optional fields!</div>
-                 </form>
+                  <div class="error-message" id="errorMsg">Complete non optional fields!</div>
+                </form>
 
             </div>
 
