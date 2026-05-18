@@ -9,7 +9,7 @@
 <body>
 
     <header>
-        <h1>Suflare de Viaţă</h1>
+        <h1>Titlu revistă</h1>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Numere</a></li>
@@ -21,25 +21,41 @@
     </header>
 
     <main>
-        <!-- Secțiunea 1 -->
+        <!-- Secțiunea 1: Descriere și Peer Review -->
         <section class="sectiune-explicativa">
-            <p>Revista noastră apare într-un singur număr pe an. Domeniile abordate de colaboratorii noştri sunt: (1) istoria, (2) lingvistica, (2) teologia ortodoxă. Ne preocupă mai cu seamă istoria spaţiului românesc. Oferim cititorilor noştri traduceri biblice, patristice şi din alte surse istorice. Pentru publicarea în secţiunea de <b>Studii</b> se asigură peer review. Pentru celelalte secţiuni (<b>Recenzii</b>, <b>Eseuri</b> şi <b>Predici</b>) sunt primite articole de reflexie ortodoxă. Nu se primesc materiale insuficient elaborate ştiinţific (pentru Studii) sau logic (pentru celelalte secţiuni), precum nici vreun text jignitor faţă de diverse persoane sau categorii sociale, etnice ori religioase. Pot exista situaţii în care nu putem primi un material întrucât nu intră în sfera de preocupări a acestei reviste sau ne declinăm competenţa.</p>
+            <p>Revista noastră apare într-un singur număr pe an. Domeniile abordate de colaboratorii noştri sunt: (1) istoria, (2) lingvistica, (3) teologia ortodoxă. Ne preocupă mai cu seamă istoria spaţiului românesc. Oferim cititorilor noştri traduceri biblice, patristice şi din alte surse istorice. Pentru publicarea în secţiunea de <b>Studii</b> se asigură peer review. Pentru celelalte secţiuni (<b>Recenzii</b>, <b>Eseuri</b> şi <b>Predici</b>) sunt primite articole de reflexie ortodoxă. Nu se primesc materiale insuficient elaborate ştiinţific (pentru Studii) sau logic (pentru celelalte secţiuni), precum nici vreun text jignitor faţă de diverse persoane sau categorii sociale, etnice ori religioase. Pot exista situaţii în care nu putem primi un material întrucât nu intră în sfera de preocupări a aceastăi reviste sau ne declinăm competenţa.</p>
         </section>
 
-        <!-- Secțiunea 2 -->
-        <section class="sectiune-continut">
-            <p>Bun venit pe platforma oficială a publicației noastre. Aici puteți consulta arhiva completă și cele mai recente numere apărute.</p>
-            
-            <div class="spatiu-1cm"></div>
+        <!-- Secțiunea 2: Caseta Redacțională (OBLIGATORIE PENTRU ISSN) -->
+        <section class="sectiune-caseta-redactionala">
+            <h2>Caseta Redacțională / Editorial Board</h2>
+            <div class="caseta-grid">
+                <p><b>Editor:</b> [Numele tău sau Asociația/Editura/PFA-ul care publică]</p>
+                <p><b>Redactor-Șef:</b> Şerban George Paul Drugaş</p>
+                <p><b>Colegiul de redacție:</b> [Nume Evaluatori / Colaboratori Peer-Review]</p>
+                <p><b>Periodicitate:</b> Anuală (1 număr pe an)</p>
+                <p><b>Contact:</b> [Adresă fizică sau Email Oficial de contact revistă]</p>
+                <p><b>ISSN:</b> În curs de alocare</p>
+            </div>
+        </section>
 
-            <!-- Zonă imagini cu link extern către Drive -->
-            <div class="grid-reviste">
-                <div class="revista-item">
-                    <!-- Înlocuiți # cu link-ul real de Google Drive către PDF -->
-                    <a href="https://drive.google.com/file/d/127xerAiTgJVoOlsdXA3ndsLOrus8CUWs/view?usp=drive_link" target="_blank" title="Deschide PDF în Drive">
-                        <img src="Rev0001.jpg" alt="Coperta Nr. 1 / 2026">
-                    </a>
-                    <p>Nr. 1 / 2026 Proba conexiune pdf</p>
+        <!-- Secțiunea 3: Conținut și Vizualizare PDF Embed -->
+        <section class="sectiune-continut">
+            <p class="text-introducere">Bun venit pe platforma oficială a publicației noastre. Mai jos puteți consulta direct în pagină numărul curent sau îl puteți descărca folosind butonul dedicat.</p>
+            
+            <div class="zona-numar-curent">
+                <h3>Nr. 1 / 2026 — Ediție Completă (Probă)</h3>
+                
+                <!-- Buton de descărcare directă din folderul local de pe GitHub -->
+                <a href="documente/revista_nr_1.pdf" download class="btn-download-pdf">Descărcă formatul PDF</a>
+                
+                <!-- Containerul EMBED pentru PDF -->
+                <div class="container-pdf-embed">
+                    <iframe src="documente/revista_nr_1.pdf" type="application/pdf">
+                        <p>Navigatorul tău nu suportă vizualizarea PDF-ului direct în pagină. 
+                           <a href="documente/revista_nr_1.pdf">Apasă aici pentru a descărca fișierul.</a>
+                        </p>
+                    </iframe>
                 </div>
             </div>
         </section>
@@ -47,11 +63,10 @@
 
     <footer>
         <div class="stanga">
-            <!-- Înlocuiți # cu link-urile dumneavoastră -->
-            <a href="https://www.facebook.com/serban.drugas" target="_blank">Facebook</a>
-            <a href="https://serbangpdrugas.wixsite.com/burebistas" target="_blank">Wix</a>
-            <a href="https://serban-george-paul-drugas.webnode.ro/" target="_blank">Webnode</a>
-            <a href="https://serbandrugas.github.io/serban-george-paul-drugas/ro/" target="_blank">GitHub</a>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://wixsite.com" target="_blank">Wix</a>
+            <a href="https://webnode.ro" target="_blank">Webnode</a>
+            <a href="https://github.io" target="_blank">GitHub</a>
         </div>
         <div class="centru">
             &copy; Şerban George Paul Drugaş
@@ -62,7 +77,6 @@
     </footer>
 
     <script>
-        // Ceas în timp real pentru fusul orar al României
         function actualizeazaCeas() {
             const opțiuni = {
                 timeZone: 'Europe/Bucharest',
